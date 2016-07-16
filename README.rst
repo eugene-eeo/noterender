@@ -1,5 +1,7 @@
-noterender |badge|
-==================
+noterender
+==========
+
+.. image:: https://img.shields.io/badge/powered--by-oxygen-blue.svg
 
 Made for compiling my Markdown notes. Uses ``markdown2`` internally
 and supports a richer superset of markdown with footnotes_, tables_,
@@ -12,4 +14,3 @@ metadata_, and SmartyPants_. Quick and dirty::
 .. _metadata:    https://github.com/trentm/python-markdown2/wiki/metadata
 .. _tables:      https://github.com/trentm/python-markdown2/wiki/tables
 .. _SmartyPants: http://daringfireball.net/projects/smartypants/
-.. |badge| image:: http://forthebadge.com/images/badges/fuck-it-ship-it.svg
