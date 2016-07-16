@@ -1,6 +1,9 @@
 noterender
 ==========
 
+.. image:: http://forthebadge.com/images/badges/powered-by-oxygen.svg
+.. image:: http://forthebadge.com/images/badges/fuck-it-ship-it.svg
+
 Made for compiling my Markdown notes. Uses ``markdown2`` internally
 and supports a richer superset of markdown with footnotes_, tables_,
 metadata_, and SmartyPants_. Quick and dirty::
