@@ -1,8 +1,8 @@
 noterender
 ==========
 
-.. image:: https://img.shields.io/badge/powered--by-oxygen-blue.svg
-.. image:: https://img.shields.io/badge/tests-none-green.svg
+.. image:: https://img.shields.io/badge/powered--by-oxygen-blue.svg?style=flat-square
+.. image:: https://img.shields.io/badge/tests-none-green.svg?style=flat-square
 
 Made for compiling my Markdown notes. Uses ``markdown2`` internally
 and supports a richer superset of markdown with footnotes_, tables_,
