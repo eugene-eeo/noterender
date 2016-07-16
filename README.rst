@@ -2,6 +2,7 @@ noterender
 ==========
 
 .. image:: https://img.shields.io/badge/powered--by-oxygen-blue.svg
+.. image:: https://img.shields.io/badge/tests-none-green.svg
 
 Made for compiling my Markdown notes. Uses ``markdown2`` internally
 and supports a richer superset of markdown with footnotes_, tables_,
