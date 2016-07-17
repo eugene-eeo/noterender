@@ -14,13 +14,8 @@ Quick and dirty::
 
 Because this is largely made for my own use, it requires that you
 already have Open Sans on your machine for the rendered notes to
-look acceptable. Internally this project hitchhikes:
-
-- KaTeX_
-- markdown2_
-- docopt_
-- chevron_
-- path.py_
+look acceptable. Internally this project hitchhikes KaTeX_, markdown2_,
+docopt_, chevron_, and path.py_.
 
 todo
 ----
