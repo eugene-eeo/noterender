@@ -16,7 +16,7 @@ Internally this project hitchhikes:
  - KaTeX_
  - markdown2_
  - docopt_
- - pystache_
+ - chevron_
  - path.py_
 
 
@@ -28,5 +28,5 @@ Internally this project hitchhikes:
 .. _KaTeX:     https://github.com/Khan/KaTeX
 .. _markdown2: https://github.com/trentm/python-markdown2
 .. _docopt:    https://github.com/docopt/docopt
-.. _pystache:  https://github.com/defunkt/pystache
+.. _chevron:   https://github.com/noahmorrison/chevron
 .. _path.py:   https://github.com/jaraco/path.py

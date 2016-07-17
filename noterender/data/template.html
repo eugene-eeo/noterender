@@ -32,32 +32,23 @@
   <h1>{{title}}</h1>
   <div id='content'>{{{content}}}</div>
   <script>
-!function() {
+!function(){
   var set = document.getElementsByTagName('code');
-  var inline  = /^\$ (.+) \$$/;
-  var display = /^\$\$ (.+) \$\$$/;
+  var pat = /(?:^\$\$\s*([\s\S]+)\s*\$\$$)|(?:^\$\s*([\s\S]+)\s*\$$)/;
 
   function extractTeX(text) {
-    var match;
-    if (match = text.match(inline)) {
-      return {
-        displayMode: false,
-        TeX: match[1],
-      };
-    }
-    if (match = text.match(display)) {
-      return {
-        displayMode: true,
-        TeX: match[1],
-      };
-    }
-    return null;
+    var match = text.match(pat);
+    if (!match) return null;
+    return {
+      TeX: match[1] || match[2],
+      displayMode: match[1] ? true : false,
+    };
   }
 
   for (var i = set.length; i--;) {
     var code = set[i];
     var info = extractTeX(code.textContent);
-    if (info == null)
+    if (info === null)
       continue;
     katex.render(info.TeX, code, {
       displayMode: info.displayMode,
