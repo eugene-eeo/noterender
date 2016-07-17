@@ -24,40 +24,48 @@
     font-size: 0.75em;
   }
   </style>
-  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?delayStartupUntil=configured"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
   <title>{{title}}</title>
 </head>
 <body>
   <h1>{{title}}</h1>
   <div id='content'>{{{content}}}</div>
   <script>
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [["$","$"]],
-      skipTags:["script","noscript","style","textarea","pre"]
-    },
-    skipStartupTypeset:true,
-    showMathMenu: false,
-    messageStyle:"none",
-    scale: 90,
-    jax: ["input/TeX","output/SVG"],
-    extensions: ["tex2jax.js"],
-    TeX: {
-      extensions: ["AMSmath.js","AMSsymbols.js"]
+!function() {
+  var set = document.getElementsByTagName('code');
+  var inline  = /^\$ (.+) \$$/;
+  var display = /^\$\$ (.+) \$\$$/;
+
+  function extractTeX(text) {
+    var match;
+    if (match = text.match(inline)) {
+      return {
+        displayMode: false,
+        TeX: match[1],
+      };
     }
-  });
-  MathJax.Hub.Startup.MenuZoom=function(){};
-  MathJax.Hub.Queue(['Typeset', MathJax.Hub, document.body]);
-  MathJax.Hub.Queue(function() {
-    // Fix <code> tags after MathJax finishes running. This is a
-    // hack to overcome a shortcoming of Markdown. Discussion at
-    // https://github.com/mojombo/jekyll/issues/199
-    var all = MathJax.Hub.getAllJax(), i;
-    for (var i = all.length; i--;) {
-      all[i].SourceElement().parentNode.classList.add('has-jax');
+    if (match = text.match(display)) {
+      return {
+        displayMode: true,
+        TeX: match[1],
+      };
     }
-  });
-  MathJax.Hub.Configured();
+    return null;
+  }
+
+  for (var i = set.length; i--;) {
+    var code = set[i];
+    var info = extractTeX(code.textContent);
+    if (info == null)
+      continue;
+    katex.render(info.TeX, code, {
+      displayMode: info.displayMode,
+      throwOnError: false,
+    });
+    code.classList.add('has-jax');
+  }
+}();
   </script>
 </body>
 </html>
