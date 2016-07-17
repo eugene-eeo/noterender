@@ -1,6 +1,7 @@
 import sys
 import traceback
 import markdown2
+from concurrent.futures import ProcessPoolExecutor
 from path import Path
 from .utils import fmt
 
@@ -14,9 +15,17 @@ EXTRAS = [
 ]
 
 
+def unpack_render_file(f_dst):
+    file, dst = f_dst
+    return render_file(file, dst)
+
+
 def render_directory(src, dst):
-    for file in src.files('*.md'):
-        render_file(file, dst)
+    with ProcessPoolExecutor() as pool:
+        pool.map(unpack_render_file, [
+            (file, dst) for file in src.files('*.md')
+            ])
+        pool.shutdown()
 
 
 def render_file(file, dst):
