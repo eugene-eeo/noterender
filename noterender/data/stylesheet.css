@@ -25,6 +25,19 @@ hr {
   font-size: 0.75em;
 }
 
+table {
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #EEE;
+}
+
+td, th {
+  border: 1px solid #000;
+  padding: 0.2em 0.5em;
+}
+
 #error pre {
   border: 2px solid #992200;
   background-color: #aa3311;

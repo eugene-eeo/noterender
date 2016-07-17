@@ -10,6 +10,7 @@ EXTRAS = [
     'metadata',
     'tables',
     'smarty-pants',
+    'markdown-in-html',
 ]
 
 
