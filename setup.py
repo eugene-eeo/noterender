@@ -10,6 +10,6 @@ setup(
         'docopt==0.6.2',
         'path.py==8.2.1',
         'markdown2==2.3.1',
-        'pystache==0.5.4',
+        'chevron==0.9.0',
     ],
 )

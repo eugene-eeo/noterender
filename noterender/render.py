@@ -1,7 +1,6 @@
 import sys
 import traceback
 import markdown2
-import pystache
 from path import Path
 from .utils import get_text, fmt
 

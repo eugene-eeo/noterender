@@ -1,5 +1,5 @@
 import pkgutil
-from pystache import render
+from chevron import render
 
 
 def get_text(path):
