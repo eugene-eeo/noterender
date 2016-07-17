@@ -1,1 +1,1 @@
-from .render import render_directory
+from .render import render_directory, render_file

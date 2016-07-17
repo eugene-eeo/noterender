@@ -15,17 +15,14 @@ EXTRAS = [
 
 
 def render_directory(src, dst):
-    src = Path(src)
-    dst = Path(dst)
-    dst.mkdir_p()
-
-    assert src.isdir()
-    assert dst.isdir()
-
     for file in src.files('*.md'):
-        name = file.basename()[:-3] + '.html'
-        out = Path(dst.joinpath(name))
-        out.write_text(try_render(file.text()))
+        render_file(file, dst)
+
+
+def render_file(file, dst):
+    name = file.basename()[:-3] + '.html'
+    out  = Path(dst.joinpath(name))
+    out.write_text(try_render(file.text()))
 
 
 def try_render(text):

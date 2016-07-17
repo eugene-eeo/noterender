@@ -4,6 +4,7 @@ noterender
 .. image:: https://img.shields.io/badge/powered--by-oxygen-blue.svg?style=flat-square
 .. image:: https://img.shields.io/badge/tests-none-green.svg?style=flat-square
 
+
 Made for compiling my Markdown notes. Notes can be written in a
 richer superset of markdown with footnotes_, tables_, metadata_,
 and SmartyPants_. Also you can include math in the form of LaTeX.
@@ -15,12 +16,6 @@ Because this is largely made for my own use, it requires that you
 already have Open Sans on your machine for the rendered notes to
 look acceptable. Internally this project hitchhikes KaTeX_, markdown2_,
 docopt_, chevron_, and path.py_.
-
-todo
-----
-
-- Write some tests
-- Build only outdated files
 
 
 .. _footnotes:   https://github.com/trentm/python-markdown2/wiki/footnotes
