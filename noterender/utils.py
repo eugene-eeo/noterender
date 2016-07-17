@@ -12,7 +12,7 @@ def fmt(template, **kwargs):
     kwargs.update({
         'stylesheet': get_text('stylesheet.css'),
         'script':     get_text('render-tex.js'),
-    });
+    })
     return render(
             get_text(template),
             kwargs,
