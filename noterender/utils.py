@@ -8,12 +8,12 @@ def get_text(path):
                   .decode('utf-8')
 
 
-def fmt(template, **kwargs):
+def fmt(filename, **kwargs):
     kwargs.update({
         'stylesheet': get_text('stylesheet.css'),
         'script':     get_text('render-tex.js'),
     })
     return render(
-            get_text(template),
+            get_text(filename),
             kwargs,
             )

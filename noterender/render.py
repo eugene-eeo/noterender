@@ -16,6 +16,7 @@ EXTRAS = [
 def render_directory(src, dst):
     src = Path(src)
     dst = Path(dst)
+    dst.mkdir_p()
 
     assert src.isdir()
     assert dst.isdir()

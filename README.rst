@@ -9,8 +9,7 @@ richer superset of markdown with footnotes_, tables_, metadata_,
 and SmartyPants_. Also you can include math in the form of LaTeX.
 Quick and dirty::
 
-    $ mkdir build
-    $ noterender --src='notes' --dst='build'
+    $ noterender --src='notes/' --dst='build/'
 
 Because this is largely made for my own use, it requires that you
 already have Open Sans on your machine for the rendered notes to
