@@ -1,0 +1,34 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  width: 35em;
+  margin: 3em auto;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+.has-jax {
+  font: inherit;
+  font-size: 100%;
+}
+
+hr {
+  background-color: #000;
+  border: 0;
+  height: 1px;
+}
+
+.footnotes {
+  margin-top: 5em;
+  font-size: 0.75em;
+}
+
+#error pre {
+  border: 2px solid #992200;
+  background-color: #aa3311;
+  padding: 1em;
+  color: white;
+  font-family: 'Consolas', monospace;
+}

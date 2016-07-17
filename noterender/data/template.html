@@ -2,28 +2,7 @@
 <html>
 <head>
   <meta charset='utf-8'/>
-  <style>
-  body {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    width: 35em;
-    margin: 3em auto;
-  }
-  li { margin: 0.5em 0; }
-  .has-jax {
-    font: inherit;
-    font-size: 100%;
-  }
-  hr {
-    background-color: #000;
-    border: 0;
-    height: 1px;
-  }
-  .footnotes {
-    margin-top: 5em;
-    font-size: 0.75em;
-  }
-  </style>
+  <style>{{stylesheet}}</style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
   <title>{{title}}</title>
@@ -31,31 +10,6 @@
 <body>
   <h1>{{title}}</h1>
   <div id='content'>{{{content}}}</div>
-  <script>
-!function(){
-  var set = document.getElementsByTagName('code');
-  var pat = /(?:^\$\$\s*([\s\S]+)\s*\$\$$)|(?:^\$\s*([\s\S]+)\s*\$$)/;
-
-  function extractTeX(text) {
-    var match = text.match(pat);
-    if (!match) return null;
-    return {
-      TeX: match[1] || match[2],
-      displayMode: match[1] ? true : false,
-    };
-  }
-
-  for (var i = set.length; i--;) {
-    var code = set[i];
-    var info = extractTeX(code.textContent);
-    if (!info) continue;
-    katex.render(info.TeX, code, {
-      displayMode: info.displayMode,
-      throwOnError: false,
-    });
-    code.classList.add('has-jax');
-  }
-}();
-  </script>
+  <script>{{script}}</script>
 </body>
 </html>

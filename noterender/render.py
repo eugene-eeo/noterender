@@ -2,7 +2,7 @@ import sys
 import traceback
 import markdown2
 from path import Path
-from .utils import get_text, fmt
+from .utils import fmt
 
 
 EXTRAS = [
@@ -36,15 +36,13 @@ def try_render(text):
 
 
 def render_error(msg):
-    template = get_text('error.html')
-    return fmt(template, content=msg)
+    return fmt('error.html', content=msg)
 
 
 def render_text(text):
-    template = get_text('template.html')
     md = markdown2.markdown(text, extras=EXTRAS)
     return fmt(
-            template,
+            'template.html',
             title=md.metadata['title'],
             content=md,
             )
