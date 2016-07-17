@@ -13,11 +13,11 @@ metadata_, and SmartyPants_. Quick and dirty::
 
 Internally this project hitchhikes:
 
- - KaTeX_
- - markdown2_
- - docopt_
- - chevron_
- - path.py_
+- KaTeX_
+- markdown2_
+- docopt_
+- chevron_
+- path.py_
 
 
 .. _footnotes:   https://github.com/trentm/python-markdown2/wiki/footnotes
