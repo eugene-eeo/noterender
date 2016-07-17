@@ -48,8 +48,7 @@
   for (var i = set.length; i--;) {
     var code = set[i];
     var info = extractTeX(code.textContent);
-    if (info === null)
-      continue;
+    if (!info) continue;
     katex.render(info.TeX, code, {
       displayMode: info.displayMode,
       throwOnError: false,
