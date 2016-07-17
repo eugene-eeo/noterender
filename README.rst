@@ -15,9 +15,8 @@ Quick and dirty::
 Because this is largely made for my own use, it requires that you
 already have Open Sans on your machine for the rendered notes to
 look acceptable. Internally this project hitchhikes KaTeX_, markdown2_,
-docopt_, chevron_, and path.py_. It requires Python 3.2+. Yes there are
-existing static page compilers. But I wanted to create my own to try
-out new libraries.
+docopt_, chevron_, path.py_, and futures_. Yes there are existing static
+page compilers. But I wanted to create my own to try out new libraries.
 
 
 .. _footnotes:   https://github.com/trentm/python-markdown2/wiki/footnotes
@@ -30,3 +29,4 @@ out new libraries.
 .. _docopt:    https://github.com/docopt/docopt
 .. _chevron:   https://github.com/noahmorrison/chevron
 .. _path.py:   https://github.com/jaraco/path.py
+.. _futures:   https://github.com/agronholm/pythonfutures
