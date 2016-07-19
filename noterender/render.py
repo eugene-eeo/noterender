@@ -12,6 +12,7 @@ EXTRAS = [
     'tables',
     'smarty-pants',
     'markdown-in-html',
+    'fenced-code-blocks',
 ]
 
 
