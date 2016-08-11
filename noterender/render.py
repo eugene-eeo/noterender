@@ -30,7 +30,7 @@ def render_directory(src, dst):
 
 
 def render_file(file, dst):
-    name = file.basename()[:-3] + '.html'
+    name = file.basename().rsplit('.', 1)[0] + '.html'
     out  = Path(dst.joinpath(name))
     out.write_text(try_render(file.text()))
 
