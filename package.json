@@ -1,9 +1,0 @@
-{
-  "license": "MIT",
-  "repository": "https://github.com/eugene-eeo/noterender",
-  "dependencies": {
-    "cheerio": "^0.20.0",
-    "get-stdin": "^5.0.1",
-    "katex": "^0.6.0"
-  }
-}
