@@ -42,6 +42,10 @@ td, th {
   padding: 0.2em 0.5em;
 }
 
+pre, code {
+  font-family: Inconsolata, Consolas, Menlo, monospace;
+}
+
 #error pre {
   border: 2px solid #992200;
   background-color: #aa3311;
