@@ -10,7 +10,7 @@ EXTRAS = [
     'footnotes',
     'metadata',
     'tables',
-    'smarty-pants',
+    #'smarty-pants',  # avoid until https://github.com/trentm/python-markdown2/issues/150 is resolved
     'markdown-in-html',
     'fenced-code-blocks',
 ]
