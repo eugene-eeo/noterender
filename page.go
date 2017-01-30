@@ -8,7 +8,8 @@ import bf "github.com/russross/blackfriday"
 const htmlFlags int = 0 |
 	bf.HTML_USE_XHTML |
 	bf.HTML_USE_SMARTYPANTS |
-	bf.HTML_SMARTYPANTS_LATEX_DASHES
+	bf.HTML_SMARTYPANTS_LATEX_DASHES |
+	bf.HTML_FOOTNOTE_RETURN_LINKS
 
 const mdExtensions int = 0 |
 	bf.EXTENSION_TABLES |
