@@ -8,7 +8,7 @@ import bf "github.com/russross/blackfriday"
 const htmlFlags int = 0 |
 	bf.HTML_USE_XHTML |
 	bf.HTML_USE_SMARTYPANTS |
-	bf.HTML_SMARTYPANTS_DASHES
+	bf.HTML_SMARTYPANTS_LATEX_DASHES
 
 const mdExtensions int = 0 |
 	bf.EXTENSION_TABLES |
@@ -16,7 +16,8 @@ const mdExtensions int = 0 |
 	bf.EXTENSION_FOOTNOTES |
 	bf.EXTENSION_STRIKETHROUGH |
 	bf.EXTENSION_HEADER_IDS |
-	bf.EXTENSION_DEFINITION_LISTS
+	bf.EXTENSION_DEFINITION_LISTS |
+	bf.EXTENSION_AUTOLINK
 
 type page struct {
 	Title   string            `yaml:"title"`

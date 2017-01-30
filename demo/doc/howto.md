@@ -19,7 +19,9 @@ Copy and paste the following into `nr-config.json`:
         "dst": "out/"
     }
 
-In `file1.md`:
+The `src` and `dst` fields tell `noterender` where to search for the Markdown
+files (it only reads files ending with `.md`) and where to dump the rendered
+HTML, respectively. In `file1.md`:
 
     ---
     title: My First File
@@ -93,10 +95,10 @@ And then in `template.html`:
     </body>
     </html>
 
-When `noterender` runs the file specified by `template` is compiled as a
+When `noterender` runs the file specified by `template` is used as a
 mustache[^1] template. `{{title}}` and `{{{content}}}` will contain
 the title of the page and the rendered markdown content, respectively.
-It is important that you use `{{{content}}}` instead of `{{content}}`
+**It is important that you use `{{{content}}}` instead of `{{content}}`**
 because in the latter case, the HTML will be escaped.
 
 Another gimmick: you can use custom parameters in your markdown files.
@@ -188,7 +190,25 @@ code blocks, for instance:
 
 | In                                      | Out           |
 | --------------------------------------- |---------------|
-| <code>&grave;\$ \LaTeX \$&grave;</code> | `$ \KaTeX $`  |
+| <code>&grave;\$ \KaTeX \$&grave;</code> | `$ \KaTeX $`  |
 | <code>&grave;\$\$ \frac{n}{2} \$\$&grave;</code> | `$$ \frac{n}{2} $$`  |
+
+The code only activates `$ \KaTeX $` when the code block
+consists entirely of a math expression in the form of <code>&grave;$ ... $&grave;</code>
+for inline math, or <code>&grave;$$ ... $$&grave;</code> for display
+style (center-aligned) math. This is inline: `$ \frac{n}{2} $` and
+this is display style:
+
+`$$
+\frac{n}{2}
+$$`
+
+### Footnotes
+
+```
+some text[^ref]
+
+[^ref]: Lorem Ipsum...
+```
 
 [^1]: https://mustache.github.io/mustache.5.html

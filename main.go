@@ -40,7 +40,7 @@ func main() {
 	flag.Parse()
 
 	println("Build started.")
-	println("Reading config from", configFile)
+	println("Reading config from", color.GreenString(configFile))
 
 	data, err := ioutil.ReadFile(configFile)
 	if err != nil {
@@ -51,7 +51,7 @@ func main() {
 
 	t, _ := mustache.ParseString(defaultTemplate)
 	if config.Template != "" {
-		println("Using template:", config.Template)
+		println("Using template", color.GreenString(config.Template))
 		t, err = mustache.ParseFile(config.Template)
 		check(err)
 	} else {
