@@ -1,0 +1,5 @@
+{
+    "template": "template.html",
+    "src": "doc/",
+    "dst": "dst/"
+}
