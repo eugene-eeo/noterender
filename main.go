@@ -14,8 +14,38 @@ const defaultTemplate string = `<html>
 </body>
 </html>`
 
+const katexBundle string = `
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.6.0/katex.min.js"></script>
+<script>
+!function(){
+	var set = document.getElementsByTagName('code');
+	var pat = /(?:^\$\$\s*([\s\S]+)\s*\$\$$)|(?:^\$\s*([\s\S]+)\s*\$$)/;
+	function extractTeX(text) {
+		var match = text.match(pat);
+		if (!match) return null;
+		return {
+			TeX: match[1] || match[2],
+			displayMode: match[1] ? true : false,
+		};
+	}
+	for (var i = set.length; i--;) {
+		var code = set[i];
+		var info = extractTeX(code.textContent);
+		if (!info) continue;
+		katex.render(info.TeX, code, {
+			displayMode: info.displayMode,
+			throwOnError: false,
+		});
+		code.classList.add('has-jax');
+	}
+}();
+</script>
+`
+
 func renderPage(c *config, p *page, t *mustache.Template) string {
 	d := map[string]string{}
+	d["katex_bundle"] = katexBundle
 	for k, v := range c.Params {
 		d[k] = v
 	}
