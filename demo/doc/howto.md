@@ -1,18 +1,18 @@
 ---
-title: Using rmd for fun and profit
+title: Using noterender for fun and profit
 version: 0.1-beta
 ---
 
-`rmd` is a program that can be run to transform a directory of Markdown
+`noterender` is a program that can be run to transform a directory of Markdown
 files to HTML files in another directory. First create a new directory with
 the following structure:
 
-    rmd-config.json
+    noterender-config.json
     template.html
     doc/
         file1.md
 
-Copy and paste the following into `rmd-config.json`:
+Copy and paste the following into `nr-config.json`:
 
     {
         "src": "doc/",
@@ -29,7 +29,7 @@ In `file1.md`:
 
 Run the following in your terminal:
 
-    $ ./rmd
+    $ ./noterender
 
 You should see a bunch of text and a green "OK" at the end if everything
 goes well. You should see an `out/` directory created that contains
@@ -41,7 +41,7 @@ goes well. You should see an `out/` directory created that contains
  to the title specified in the frontmatter (the block of text between
  the `---` bars).
 
-When you write markdown files for `rmd` you must follow following structure:
+When you write markdown files for `noterender` you must follow following structure:
 
     ---
     title: its a required value
@@ -75,7 +75,7 @@ a table in the page we can use either of the following:
 Refer to https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 for more information on how to write Markdown. For more control over the
 HTML output, you can use templates in order to be able to use custom
-stylesheets. In your `rmd-config.json` add a `template` field:
+stylesheets. In your `nr-config.json` add a `template` field:
 
     {
         ...,
@@ -93,7 +93,7 @@ And then in `template.html`:
     </body>
     </html>
 
-When `rmd` runs the file specified by `template` is compiled as a
+When `noterender` runs the file specified by `template` is compiled as a
 mustache[^1] template. `{{title}}` and `{{{content}}}` will contain
 the title of the page and the rendered markdown content, respectively.
 It is important that you use `{{{content}}}` instead of `{{content}}`

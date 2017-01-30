@@ -36,7 +36,7 @@ func check(err error) {
 
 func main() {
 	var configFile string
-	flag.StringVar(&configFile, "config", "rmd-config.json", "configuration file")
+	flag.StringVar(&configFile, "config", "nr-config.json", "configuration file")
 	flag.Parse()
 
 	println("Build started.")
