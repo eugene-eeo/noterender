@@ -27,11 +27,11 @@ type page struct {
 }
 
 func newPageFrom(filename string) (*page, error) {
-	p := new(page)
 	data, err := ioutil.ReadFile(filename)
 	if err != nil {
 		return nil, fmt.Errorf("error when reading file \"%s\": %s", filename, err)
 	}
+	p := new(page)
 	err = frontmatter.Unmarshal(data, p)
 	if err != nil {
 		return nil, fmt.Errorf("cannot parse frontmatter: %s", err)

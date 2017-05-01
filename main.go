@@ -43,17 +43,17 @@ const katexBundle string = `
 </script>
 `
 
-func renderPage(c *config, p *page, t *mustache.Template) string {
+func renderPage(conf *config, pg *page, t *mustache.Template) string {
 	d := map[string]string{}
 	d["katex_bundle"] = katexBundle
-	for k, v := range c.Params {
+	for k, v := range conf.Params {
 		d[k] = v
 	}
-	d["title"] = p.Title
-	for k, v := range p.Params {
+	d["title"] = pg.Title
+	for k, v := range pg.Params {
 		d[k] = v
 	}
-	d["content"] = p.Render()
+	d["content"] = pg.Render()
 	return t.Render(d)
 }
 
